@@ -8,26 +8,20 @@ namespace DepositosPOO
         //encapsulamento
         private string _numero;
         public string Nome { get; set; }
-        public char Deposito { get; private set; }
-        public double SaldoInicial { get; private set; }
-
-        //construtor para deposito == 's'
-        public ContaBancaria(string numero, string nome, char deposito, double valor)
-        {
-            _numero = numero;
-            Nome = nome;
-            Deposito = deposito;
-            SaldoInicial = valor;
-        }
+        
+        public double SaldoInicial { get; private set; }//apesar de ser alterável, apenas é alterável por meio de função
 
         //construtor para deposito == 'n'
-        public ContaBancaria(string numero, string nome, char deposito)
+        public ContaBancaria(string numero, string nome)
         {
             _numero = numero;
             Nome = nome;
-            Deposito = deposito;
-            SaldoInicial = 0;
+        }
 
+        //construtor para deposito == 's'
+        public ContaBancaria(string numero, string nome, double depositoInicial) : this(numero, nome)
+        {
+            AdicionarValor(depositoInicial); //Lógica de depósito implementada diretamente no depósito inicial
         }
 
         //Propertie

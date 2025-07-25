@@ -21,12 +21,12 @@ namespace DepositosPOO
             {
                 Console.Write("Entre o valor do depósito inicial: ");
                 double deposito = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
-                c = new ContaBancaria(conta, titular, opc, deposito);
+                c = new ContaBancaria(conta, titular, deposito);
                 Console.WriteLine("");
             }
             else if(opc == 'n')
             {
-                c = new ContaBancaria(conta, titular, opc);
+                c = new ContaBancaria(conta, titular);
                 Console.WriteLine("");
             }
             else
